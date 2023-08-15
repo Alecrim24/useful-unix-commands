@@ -1,0 +1,8 @@
+# exact same number of sequences, one being from cds another being from pep (amino acid sequences)
+[qkdf72@login1.ham8 Trinity]$ grep -c '>' trinity_assembly-H.m.Trinity.fasta.transdecoder.pep trinity_assembly-H.m.Trinity.fasta.transdecoder.cds
+trinity_assembly-H.m.Trinity.fasta.transdecoder.pep:1055735
+trinity_assembly-H.m.Trinity.fasta.transdecoder.cds:1055735
+
+
+# tells us where the gene is at what location not what the gene is
+less trinity_assembly-H.m.Trinity.fasta.transdecoder.gff3
