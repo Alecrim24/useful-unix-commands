@@ -6,3 +6,6 @@ trinity_assembly-H.m.Trinity.fasta.transdecoder.cds:1055735
 
 # tells us where the gene is at what location not what the gene is
 less trinity_assembly-H.m.Trinity.fasta.transdecoder.gff3
+
+#download the swiss prot data base part of trinotate
+wget https://www.uniprot.org/help/downloads
