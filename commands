@@ -9,3 +9,10 @@ less trinity_assembly-H.m.Trinity.fasta.transdecoder.gff3
 
 #download the swiss prot data base part of trinotate
 wget https://www.uniprot.org/help/downloads
+
+
+#############
+# get the files with 2 parts to a file to show 
+
+ls | grep -E "P1.*R1"
+
