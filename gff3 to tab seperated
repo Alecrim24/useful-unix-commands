@@ -1,0 +1,60 @@
+cd fasta_proteome_files/
+ls
+head H.m_proteome.fasta 
+cd ../
+cat H.moselyanum_helixer.gff3 | grep "\sgene\s" 
+cat H.moselyanum_helixer.gff3 | grep "\sgene\s"  | cut -f 1,4,5,9
+cat H.moselyanum_helixer.gff3 | grep "\sgene\s"  | cut -f 1,4,5,9 | sed 's/ID=//g'
+cat H.moselyanum_helixer.gff3 | grep "\sgene\s"  | cut -f 1,4,5,9 | sed 's/ID=//g' |  awk -F '{print $1,$4,$2,$3]'
+cat H.moselyanum_helixer.gff3 | grep "\sgene\s"  | cut -f 1,4,5,9 | sed 's/ID=//g' |  awk -F '{print $1,$4,$2,$3}'
+cat H.moselyanum_helixer.gff3 | grep "\sgene\s"  | cut -f 1,4,5,9 | sed 's/ID=//g' |  awk  '{print $1,$4,$2,$3}'
+cat H.moselyanum_helixer.gff3 | grep "\sgene\s"  | cut -f 1,4,5,9 | sed 's/ID=//g' |  awk  '{print $1,$4,$2,$3}' | sed 's/ /\t/g'
+cat H.moselyanum_helixer.gff3 | grep "\sgene\s"  | cut -f 1,4,5,9 | sed 's/ID=//g' |  awk  '{print $1,$4,$2,$3}' | sed 's/ /\t/g' > H.moselyanum_helixer-DupGeneFinder.gff 
+ls
+cat hifiasm_M.beccarii_out.gff3 | grep "\sgene\s"  | cut -f 1,4,5,9 | sed 's/ID=//g' |  awk  '{print $1,$4,$2,$3}' | sed 's/ /\t/g' > M.beccarii_helixer-DupGeneFinder.gff 
+cat M.beccarii_helixer-DupGeneFinder.gff 
+ls
+cat H.moselyanum_helixer-DupGeneFinder.gff M.beccarii_helixer-DupGeneFinder.gff | cut - f 2 | sort -d
+cat H.moselyanum_helixer-DupGeneFinder.gff M.beccarii_helixer-DupGeneFinder.gff | cut -f 2 | sort -d
+cat H.moselyanum_helixer-DupGeneFinder.gff M.beccarii_helixer-DupGeneFinder.gff | cut -f 2 | sort -d | wc -l
+cat H.moselyanum_helixer-DupGeneFinder.gff M.beccarii_helixer-DupGeneFinder.gff | cut -f 2 | sort -u | wc -l
+wc -l M.beccarii_helixer-DupGeneFinder.gff 
+wc -l H.moselyanum_helixer-DupGeneFinder.gff 
+cat H.moselyanum_helixer-DupGeneFinder.gff M.beccarii_helixer-DupGeneFinder.gff | cut -f 2 | sort | uniq -d | wc -l
+ls
+
+head H.moselyanum_helixer-DupGeneFinder.gff 
+head H.moselyanum_helixer-DupGeneFinder.gff | sed 's/\t_/GGGG/g'
+head H.moselyanum_helixer-DupGeneFinder.gff | sed 's/\t_/\tHm/g'
+head H.moselyanum_helixer-DupGeneFinder.gff | sed 's/\t_/\tHm_/g'
+sed 's/\t_/\tHm_/g' -i H.moselyanum_helixer-DupGeneFinder.gff 
+sed 's/\t_/\tMb_/g' -i M.beccarii_helixer-DupGeneFinder.gff 
+cat H.moselyanum_helixer-DupGeneFinder.gff M.beccarii_helixer-DupGeneFinder.gff | cut -f 2 | sort | uniq -d | wc -l
+ls
+cd fasta_proteome_files/
+ls
+head H.m_proteome.fasta 
+cat H.m_proteome.fasta | sed 's/>/>Hm/g' > H.m_proteome-DupGeneFinder.fasta 
+cat M.b_proteome.fasta | sed 's/>/>Mb/g' > M.b_proteome-DupGeneFinder.fasta 
+cat M.b_proteome.fasta 
+cat M.b_proteome-DupGeneFinder.fasta 
+cd ../
+ls
+H.moselyanum_helixer-DupGeneFinder.gff cat
+head H.moselyanum_helixer-DupGeneFinder.gff 
+ls
+cd fasta_proteome_files/
+ls
+grep ">" H.m_proteome-DupGeneFinder.fasta 
+grep ">" H.m_proteome-DupGeneFinder.fasta  | grep -v "\.1$"
+grep ">" H.m_proteome-DupGeneFinder.fasta  | grep -v "\.2$"
+grep ">" H.m_proteome-DupGeneFinder.fasta  | sed 's/.1$//g'
+sed 's/.1$//g' -i H.m_proteome-DupGeneFinder.fasta 
+sed 's/.1$//g' -i M.b_proteome-DupGeneFinder.fasta 
+head M.b_proteome-DupGeneFinder.fasta 
+ls
+cd ../
+ls
+cat H.moselyanum_helixer-DupGeneFinder.gff  M.beccarii_helixer-DupGeneFinder.gff > Combined-DupGeneFinder.gff
+cd  fasta_proteome_files/
+ls
