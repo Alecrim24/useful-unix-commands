@@ -16,3 +16,9 @@ wget https://www.uniprot.org/help/downloads
 
 ls | grep -E "P1.*R1"
 
+
+
+###### matches using awk with column matches
+awk -F'\t' '!seen[$11]++ && $11 = 1e-10' Hm.blast > filtered_matches.blast12
+wc -l filtered_matches.blast12
+79857 filtered_matches.blast12
