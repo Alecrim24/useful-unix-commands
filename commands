@@ -22,3 +22,6 @@ ls | grep -E "P1.*R1"
 awk -F'\t' '!seen[$11]++ && $11 = 1e-10' Hm.blast > filtered_matches.blast12
 wc -l filtered_matches.blast12
 79857 filtered_matches.blast12
+
+###### count the gene numbers in a specie
+grep "gene" H.moselyanum_helixer.gff3 | wc -l
