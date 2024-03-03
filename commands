@@ -25,3 +25,7 @@ wc -l filtered_matches.blast12
 
 ###### count the gene numbers in a specie
 grep "gene" H.moselyanum_helixer.gff3 | wc -l
+
+
+##### link to grep
+https://bioinformaticsworkbook.org/Appendix/Unix/unix-basics-3grep.html#gsc.tab=0 
